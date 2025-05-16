@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/courses.css">
+  <title>Курсы и цены</title>
+</head>
+<body>
+  <header>
+    <div class="header_container margin">
+      <a class="logo" href="/"><img src="/images/logo.png" width="45" height="45">ГБУЗ "ООКССМП"</a>
+      <div class="header_right_content">
+        <div class="header_menu">
+          <a href="/">ГЛАВНАЯ</a>
+          <a href="#">О НАШЕЙ ОРГАНИЗАЦИИ</a>
+          <a href="/courses">КУРСЫ И ЦЕНЫ</a>
+          <a href="#">КОНТАКТЫ</a>
+        </div>
+        <a href="/lk"><img src="/images/user.png"></a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="courses-content margin">
+      <div class="courses-container-title">
+        <div class="courses-content-title">
+          <h3>Курсы и цены</h3>
+          <hr>
+        </div>
+        <div class="courses-search">
+          <form action="/courses/search" method="get" class="courses-look">
+            <input type="text" name="query" placeholder="Название курса" required>
+            <button type="submit"><img src="/images/поиск3.png"></button>
+          </form>
+        </div>
+      </div>
+      {{#each courses}}
+      <div class="course-card">
+        <div class="course-card-info">
+          <h3>{{this.name}}</h3>
+          <div class="course-info">
+            <div class="course-card-underline">
+              <span>Продолжительность</span>
+              <span class="underline"></span>
+              <span>{{this.duration}} ч</span>
+            </div>
+            <div class="course-card-underline">
+              <span>Цена</span>
+              <span class="underline"></span>
+              <span>{{this.price}} ₽</span>
+            </div>
+          </div>
+          {{#if this.Records.length}}
+          <button class="course-send-button btn-blue">ЗАЯВКА ОТПРАВЛЕНА</button>
+          {{else}}
+          <form action="/records/send/{{this.id}}" method="post" class="course-form">
+            <button type="submit" class="btn-green">ПОДАТЬ ЗАЯВКУ</button>
+          </form>
+          {{/if}}
+        </div>
+        <div class="course-card-image">
+          <img src="/images/course{{this.id}}.png" alt="Изображение курса">
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <a href="tel:+7(3532)441378">Телефон приёмной: <span>+7(3532)44-13-78</span></a>
+        <a href="#"><span>Политика конфиденциальности</span></a>
+      </div>
+      <div class="footer-info">
+        <a href="mailto:orenssmp@mail.ru">Обратная связь: <span>orenssmp@mail.ru</span></a>
+      </div>
+      <div class="footer-menu">
+        <a href="/">ГЛАВНАЯ</a>
+        <a href="#">О НАШЕЙ ОРГАНИЗАЦИИ</a>
+        <a href="/courses">КУРСЫ И ЦЕНЫ</a>
+        <a href="#">КОНТАКТЫ</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+header, .header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_container {
+    padding: 4px 0px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--blue);
+    gap: 15px;
+}
+
+.header_menu {
+    display: flex;
+    font-family: var(--font-serif);
+    font-weight: 500;
+    color: var(--green);
+    gap: 45px;
+}
+
+.header_menu a:hover {
+    color: var(--blue);
+}
+
+.header_right_content {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}

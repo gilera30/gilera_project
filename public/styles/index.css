@@ -1,0 +1,240 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 800px;
+    background-image: url('/images/главнаяфон.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+}
+
+.main-title {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0px;
+}
+
+.main-description {
+    font-family: var(--font-serif);
+    font-size: 18.5px;
+    font-weight: 700;
+    color: var(--green);
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.g-list {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+.g {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue);
+    gap: 16px;
+}
+
+.g img {
+    width: 47px;
+    height: 47px;
+}
+
+.main-links {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.btn-border-blue,
+.btn-border-green {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.btn-border-blue {
+    color: var(--green);
+    border: 2px solid var(--blue);
+}
+
+.btn-border-green {
+    padding: 10px 30px;
+    color: var(--blue);
+    border: 2px solid var(--green);
+}
+
+.btn-border-blue:hover,
+.btn-border-green:hover {
+    background-color: var(--smoky);
+}
+
+.programs-education-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--smoky);
+    padding: 100px 0px 100px 0px;
+    gap: 70px;
+}
+
+.programs-education-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.programs-education-title p {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--blue);
+    text-align: center;
+}
+
+.programs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 150px;
+}
+
+.program-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.list-programs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+    color: var(--green);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.list-programs a:hover {
+    color: var(--blue);
+}
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 170px;
+    width: 100%;
+    height: 797px;
+    background-image: url('/images/преимущества.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.advantages-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.advantages-list,
+.advantages-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advantages-list {
+    gap: 215px;
+}
+
+.advantages-item {
+    flex-direction: column;
+    gap: 16px;
+}
+
+.advantages-item p {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--green);
+}
+
+.documents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--smoky);
+    padding: 100px 0px 90px 0px;
+}
+
+.documents-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 52px;
+}
+
+.documents-slider {
+    display: flex;
+    align-items: center;
+    gap: 125px;
+}
+
+.documents-slide {
+    display: none;
+}
+
+.documents-slide img {
+    width: 630px;
+    height: 432px;
+}
+
+.slide-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next-btn, .prev-btn {
+    width: 50px;
+    height: 50px;
+}
+
+@media (max-width: 1400px) {
+    .header_right_content {
+        gap: 40px;
+    }
+    .header_menu {
+        gap: 30px;
+    }
+}

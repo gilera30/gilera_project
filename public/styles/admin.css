@@ -1,0 +1,26 @@
+.admin-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px 0px 170px 0px;
+}
+
+.admin-tables {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow-x: auto;
+}
+
+.admin-content-title h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.admin-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
