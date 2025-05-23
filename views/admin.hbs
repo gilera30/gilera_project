@@ -1,155 +1,188 @@
-<!DOCTYPE html>
 <html lang="ru">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet">
-  <link rel="icon" href="/images/logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="/styles/reset.css">
-  <link rel="stylesheet" href="/styles/header.css">
-  <link rel="stylesheet" href="/styles/footer.css">
-  <link rel="stylesheet" href="/styles/style.css">
-  <link rel="stylesheet" href="/styles/admin.css">
-  <title>Панель администратора</title>
-</head>
-
-<body>
-  <header>
-    <div class="header_container margin">
-      <a class="logo" href="/"><img src="/images/logo.png" width="45" height="45">ГБУЗ "ООКССМП"</a>
-      <div class="header_right_content">
-        <div class="header_menu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/admin.css" />
+    <title>Панель администратора</title>
+  </head>
+  <body>
+    <header>
+      <div class="header_container margin">
+        <a class="logo" href="/"><img
+            src="/images/logo.png"
+            width="45"
+            height="45"
+          />ГБУЗ "ООКССМП"</a>
+        <div class="header_right_content">
+          <div class="header_menu">
+            <a href="/">ГЛАВНАЯ</a>
+            <a href="/about">О НАШЕЙ ОРГАНИЗАЦИИ</a>
+            <a href="/courses">КУРСЫ И ЦЕНЫ</a>
+            <a href="/contact">КОНТАКТЫ</a>
+          </div>
+          <a href="/lk"><img src="/images/user.png" /></a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="admin-content margin">
+        <div class="admin-content-title">
+          <h2>Панель администратора</h2>
+        </div>
+        <div class="admin-tables">
+          <div class="table1">
+            <table>
+              <thead class="thead-green">
+                <tr>
+                  <th>ID</th>
+                  <th>ФИО</th>
+                  <th>Телефон</th>
+                  <th>Логин</th>
+                  <th>Роль</th>
+                  <th>Квалификация</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each users}}
+                  <tr>
+                    <td data-label="ID" class="td-text">{{this.id}}</td>
+                    <td data-label="ФИО" class="td-text">{{this.lastName}}
+                      {{this.firstName}}
+                      {{this.middleName}}</td>
+                    <td data-label="Телефон" class="td-text">{{this.phone}}</td>
+                    <td data-label="Логин" class="td-text">{{this.login}}</td>
+                    <td
+                      data-label="Роль"
+                      class="td-text"
+                    >{{this.Role.name}}</td>
+                    <td
+                      data-label="Квалификация"
+                      class="td-text"
+                    >{{this.Qualification.name}}</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+          <div class="table2">
+            <table>
+              <thead class="thead-blue">
+                <tr>
+                  <th>ID</th>
+                  <th>User ID</th>
+                  <th>Course ID</th>
+                  <th>Статус</th>
+                  <th>Операция</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each records}}
+                  <tr>
+                    <td data-label="ID" class="td-text">{{this.id}}</td>
+                    <td
+                      data-label="User ID"
+                      class="td-text"
+                    >{{this.user_id}}</td>
+                    <td
+                      data-label="Course ID"
+                      class="td-text"
+                    >{{this.course_id}}</td>
+                    {{#ifEquals this.status "awaiting"}}
+                      <td data-label="Статус" class="td-text">ожидает действия</td>
+                      <td data-label="Операция" class="td-text">
+                        <div class="admin-actions">
+                          <form
+                            action="/records/apply/{{this.id}}"
+                            method="post"
+                          >
+                            <button type="submit"><img
+                                src="/images/apply.svg"
+                              /></button>
+                          </form>
+                          <form
+                            action="/records/reject/{{this.id}}"
+                            method="post"
+                          >
+                            <button type="submit"><img
+                                src="/images/reject.svg"
+                              /></button>
+                          </form>
+                        </div>
+                      </td>
+                    {{else}}
+                      {{#ifEquals this.status "accept"}}
+                        <td data-label="Статус" class="td-text">принята</td>
+                        <td data-label="Операция" class="td-text">не требует
+                          действий</td>
+                      {{else}}
+                        <td data-label="Статус" class="td-text">отклонена</td>
+                        <td data-label="Операция" class="td-text">не требует
+                          действий</td>
+                      {{/ifEquals}}
+                    {{/ifEquals}}
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+          <div class="table3">
+            <table>
+              <thead class="thead-blue">
+                <tr>
+                  <th>ID</th>
+                  <th>Название</th>
+                  <th>Продолжительность</th>
+                  <th>Стоимость</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each courses}}
+                  <tr>
+                    <td data-label="ID" class="td-text">{{this.id}}</td>
+                    <td data-label="Название" class="td-text">{{this.name}}</td>
+                    <td
+                      data-label="Продолжительность"
+                      class="td-text"
+                    >{{this.duration}} ч</td>
+                    <td data-label="Стоимость" class="td-text">{{this.price}}
+                      руб</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <a href="tel:+7(3532)441378">Телефон приёмной:
+            <span>+7(3532)44-13-78</span></a>
+          <a href="#"><span>Политика конфиденциальности</span></a>
+        </div>
+        <div class="footer-info">
+          <a href="mailto:orenssmp@mail.ru">Обратная связь:
+            <span>orenssmp@mail.ru</span></a>
+        </div>
+        <div class="footer-menu">
           <a href="/">ГЛАВНАЯ</a>
-          <a href="#">О НАШЕЙ ОРГАНИЗАЦИИ</a>
+          <a href="/about">О НАШЕЙ ОРГАНИЗАЦИИ</a>
           <a href="/courses">КУРСЫ И ЦЕНЫ</a>
-          <a href="#">КОНТАКТЫ</a>
-        </div>
-        <a href="/lk"><img src="/images/user.png"></a>
-      </div>
-    </div>
-  </header>
-  <main>
-    <div class="admin-content margin">
-      <div class="admin-content-title">
-        <h3>Панель администратора</h3>
-      </div>
-      <div class="admin-tables">
-        <div class="table1">
-          <table>
-            <thead class="thead-green">
-              <tr>
-                <th>ID</th>
-                <th>ФИО</th>
-                <th>Телефон</th>
-                <th>Логин</th>
-                <th>Роль</th>
-                <th>Квалификация</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each users}}
-              <tr>
-                <td>{{this.id}}</td>
-                <td>{{this.lastName}} {{this.firstName}} {{this.middleName}}</td>
-                <td>{{this.phone}}</td>
-                <td>{{this.login}}</td>
-                <td>{{this.Role.name}}</td>
-                <td>{{this.Qualification.name}}</td>
-              </tr>
-              {{/each}}
-            </tbody>
-          </table>
-        </div>
-        <div class="table2">
-          <table>
-            <thead class="thead-blue">
-              <tr>
-                <th>ID</th>
-                <th>user id</th>
-                <th>course_id</th>
-                <th>Статус</th>
-                <th>Операция</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each records}}
-              <tr>
-                <td>{{this.id}}</td>
-                <td>{{this.user_id}}</td>
-                <td>{{this.course_id}}</td>
-                {{#ifEquals this.status 'awaiting'}}
-                <td>ожидает действия</td>
-                <td>
-                  <div class="admin-actions">
-                    <form action="/records/apply/{{this.id}}" method="post">
-                      <button type="submit"><img src="/images/apply.svg"></button>
-                    </form>
-                    <form action="/records/reject/{{this.id}}" method="post">
-                      <button type="submit"><img src="/images/reject.svg"></button>
-                    </form>
-                  </div>
-                </td>
-                {{else}}
-                {{#ifEquals this.status 'accept'}}
-                <td>принята</td>
-                <td>не требует действий</td>
-                {{else}}
-                <td>отклонена</td>
-                <td>не требует действий</td>
-                {{/ifEquals}}
-                {{/ifEquals}}
-              </tr>
-              {{/each}}
-            </tbody>
-          </table>
-        </div>
-        <div class="table3">
-          <table>
-            <thead class="thead-blue">
-              <tr>
-                <th>ID</th>
-                <th>Название</th>
-                <th>Продолжительность</th>
-                <th>Стоимость</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each courses}}
-              <tr>
-                <td>{{this.id}}</td>
-                <td>{{this.name}}</td>
-                <td>{{this.duration}} ч</td>
-                <td>{{this.price}} руб</td>
-              </tr>
-              {{/each}}
-            </tbody>
-          </table>
+          <a href="/contact">КОНТАКТЫ</a>
         </div>
       </div>
-    </div>
-  </main>
-  <footer>
-    <div class="footer-container">
-      <div class="footer-info">
-        <a href="tel:+7(3532)441378">Телефон приёмной: <span>+7(3532)44-13-78</span></a>
-        <a href="#"><span>Политика конфиденциальности</span></a>
-      </div>
-      <div class="footer-info">
-        <a href="mailto:orenssmp@mail.ru">Обратная связь: <span>orenssmp@mail.ru</span></a>
-      </div>
-      <div class="footer-menu">
-        <a href="/">ГЛАВНАЯ</a>
-        <a href="#">О НАШЕЙ ОРГАНИЗАЦИИ</a>
-        <a href="/courses">КУРСЫ И ЦЕНЫ</a>
-        <a href="#">КОНТАКТЫ</a>
-      </div>
-    </div>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>

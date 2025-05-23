@@ -1,28 +1,34 @@
-ul, ol {
+ul,
+ol {
   list-style: disc;
   color: var(--green);
 }
 
-.auth-content, .auth-wrapper, .auth-content-column {
+.auth-content,
+.auth-wrapper,
+.auth-content-column {
   display: flex;
   align-items: flex-start;
   gap: 50px;
 }
 
-.auth-content, .auth-content-column {
+.auth-content,
+.auth-content-column {
   padding: 100px 0px 150px 0px;
   font-family: var(--font-serif);
 }
 
-.auth-content-column, .auth-wrapper {
+.auth-content-column,
+.auth-wrapper {
   flex-direction: column;
   justify-content: center;
 }
 
-.auth-content-title h3 {
-  font-size: 25px;
+.auth-content-title h2 {
   font-weight: 700;
   color: var(--blue);
+  text-align: center;
+  width: 100%;
 }
 
 .auth-content-title span {
@@ -43,6 +49,8 @@ ul, ol {
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
+  width: 100%;
+  align-items: center;
 }
 
 .form-inputs {
@@ -50,19 +58,22 @@ ul, ol {
   flex-direction: column;
   gap: 30px;
   width: 520px;
+  max-width: 100%;
 }
 
-.form-footer, .form-footer-column {
+.form-footer,
+.form-footer-column {
   display: flex;
   width: 100%;
+  align-items: center;
 }
 
 .form-footer {
-  align-items: center;
   justify-content: space-between;
 }
 
-.form-footer span, .form-footer-column span {
+.form-footer span,
+.form-footer-column span {
   text-decoration: underline;
   color: var(--blue);
 }
@@ -89,7 +100,9 @@ ul, ol {
   width: 100%;
 }
 
-.auth-action form, .auth-action button, .href {
+.auth-action form,
+.auth-action button,
+.href {
   width: 100%;
 }
 
@@ -101,6 +114,7 @@ ul, ol {
   background-color: var(--blue-light);
   border-radius: 30px;
   padding: 30px;
+  margin-top: 80px;
 }
 
 .lk-container {
@@ -109,5 +123,202 @@ ul, ol {
 
 .lk {
   gap: 150px;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+
+@media (max-width: 1240px) {
+  .auth-content-column {
+    padding: 80px 20px 100px 20px;
+  }
+
+  .auth-content-title h3 {
+    font-size: 22px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-footer button {
+    width: 350px;
+  }
+
+  .lk {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .auth-wrapper {
+    width: 100%;
+    max-width: 520px;
+    align-items: center;
+  }
+
+  .form-content {
+    align-items: center;
+  }
+
+  .auth-content form {
+    width: 100%;
+    align-items: center;
+  }
+
+  .auth-action {
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+  }
+
+  .auth-action form,
+  .auth-action button,
+  .auth-action .href {
+    width: 100%;
+  }
+
+  .lk-courses {
+    width: 100%;
+    max-width: 520px;
+    padding: 25px;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .lk-courses h4 {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .lk-container {
+    padding-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .lk-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .lk-container ul li {
+    padding: 5px 0;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .footer-container {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-content-column {
+    padding: 60px 15px 80px 15px;
+    align-items: center;
+  }
+
+  .auth-content-title h3 {
+    font-size: 20px;
+  }
+
+  .form-inputs {
+    width: 100%;
+    max-width: 350px;
+    gap: 20px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .form-footer button {
+    max-width: 350px;
+  }
+
+  .form-footer-column button {
+    width: 100%;
+  }
+
+  .form-inputs input,
+  .select-container select {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .lk-courses {
+    padding: 20px;
+    max-width: 350px;
+  }
+
+  .lk-courses h4 {
+    font-size: 18px;
+  }
+
+  .lk-container ul li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-content {
+    padding-inline: 40px;
+  }
+
+  .auth-content-column {
+    padding: 40px 10px 60px 10px;
+  }
+
+  .auth-content-title h3 {
+    font-size: 18px;
+  }
+
+  .form-footer {
+    max-width: 300px;
+  }
+
+  .form-inputs {
+    max-width: 300px;
+    gap: 15px;
+  }
+
+  .form-footer button,
+  .form-footer-column button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .form-inputs input,
+  .select-container select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .auth-action {
+    width: 100%;
+  }
+
+  .auth-action form,
+  .auth-action button,
+  .auth-action .href {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .lk-courses {
+    padding: 15px;
+    max-width: 300px;
+  }
+
+  .lk-courses h4 {
+    font-size: 16px;
+  }
+
+  .lk-container ul li {
+    font-size: 14px;
+  }
 }

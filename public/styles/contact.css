@@ -1,0 +1,51 @@
+.main-title {
+  margin: 100px 0px;
+}
+
+.main-info {
+  margin-top: 100px;
+}
+
+.main-title h2 {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-item {
+  font-family: var(--font-sans);
+  color: var(--blue);
+  font-size: 24px;
+}
+
+.contact-span {
+  font-weight: 700;
+}
+
+.contact-item p {
+  color: var(--blue);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    text-align: center;
+    max-width: 90% !important;
+  }
+
+  .main-title {
+    margin: 40px 40px;
+  }
+
+  .main-info {
+    margin-top: 50px;
+  }
+
+  .contact-item {
+    font-size: 12px;
+  }
+}

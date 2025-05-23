@@ -1,8 +1,8 @@
 :root {
-  --green: #0B888E;
+  --green: #0b888e;
   --blue: #144279;
-  --blue-light: #C1D8EA;
-  --smoky: #EAF0F5;
+  --blue-light: #c1d8ea;
+  --smoky: #eaf0f5;
   --border: #ccc;
   --font-sans: "Open Sans", sans-serif;
   --font-serif: "Montserrat", sans-serif;
@@ -164,10 +164,30 @@ table tbody tr {
 }
 
 tr:nth-child(even) {
-  background-color: #E3E9EB;
+  background-color: #e3e9eb;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
+  .margin {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  hr {
+    width: 90% !important;
+  }
+
   table {
     min-width: 100%;
     display: block;
@@ -202,6 +222,27 @@ tr:nth-child(even) {
     left: 10px;
     font-weight: bold;
     text-align: left;
-    color: #007b8f;
+    color: var(--green);
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 15px;
   }
 }

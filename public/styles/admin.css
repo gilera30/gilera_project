@@ -1,26 +1,138 @@
 .admin-content {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 100px 0px 170px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 100px 0 170px;
+  width: 100%;
 }
 
 .admin-tables {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.admin-content-title h3 {
-    font-size: 25px;
-    font-weight: 700;
-    color: var(--blue);
+.admin-content-title h2 {
+  font-weight: 700;
+  color: var(--blue);
+  width: 100%;
 }
 
 .admin-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.admin-actions button {
+  padding: 8px;
+  min-width: 40px;
+  border-radius: 5px;
+}
+
+.admin-actions button:hover {
+  opacity: 0.9;
+}
+
+.admin-actions img {
+  width: 20px;
+  height: 20px;
+}
+
+table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+thead {
+  font-size: 18px;
+}
+
+.thead-green th,
+.thead-blue th {
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  padding: 12px 15px;
+  white-space: nowrap;
+}
+
+table tbody tr td {
+  padding: 12px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+table thead th:last-child,
+table tbody td:last-child {
+  white-space: normal;
+}
+
+@media (max-width: 1240px) {
+  .margin {
+    max-width: 910px;
+  }
+
+  .admin-content {
+    padding: 80px 0 80px;
+  }
+
+  .admin-content-title {
+    text-align: center;
+  }
+
+  .admin-tables {
+    gap: 30px;
+  }
+
+  .thead-green th,
+  .thead-blue th {
+    font-size: 16px;
+  }
+
+  table tbody tr td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1074px) {
+  .thead-green th,
+  .thead-blue th {
+    padding: 10px 8px;
+    font-size: 15px;
+  }
+
+  .td-text {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+    white-space: normal;
+    padding-left: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-content {
+    padding: 40px 0 80px;
+  }
+
+  td {
+    padding-left: 40%;
+    font-size: 13px;
+  }
+
+  .admin-actions button {
+    padding: 6px;
+    min-width: 30px;
+  }
+
+  .admin-actions img {
+    max-width: 16px;
+  }
 }

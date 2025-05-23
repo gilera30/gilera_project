@@ -1,240 +1,459 @@
 .main-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 800px;
-    background-image: url('/images/главнаяфон.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+  background-image: url("/images/главнаяфон.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 43px;
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
 }
 
 .main-title {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0px;
 }
 
 .main-description {
-    font-family: var(--font-serif);
-    font-size: 18.5px;
-    font-weight: 700;
-    color: var(--green);
+  font-family: var(--font-serif);
+  font-size: 18.5px;
+  font-weight: 700;
+  color: var(--green);
 }
 
 .main-info {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .g-list {
-    display: flex;
-    align-items: center;
-    gap: 55px;
+  display: flex;
+  align-items: center;
+  gap: 55px;
 }
 
 .g {
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-sans);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--blue);
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  gap: 16px;
 }
 
 .g img {
-    width: 47px;
-    height: 47px;
+  width: 47px;
+  height: 47px;
 }
 
 .main-links {
-    display: flex;
-    align-items: center;
-    gap: 70px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
 }
 
 .btn-border-blue,
 .btn-border-green {
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
 }
 
 .btn-border-blue {
-    color: var(--green);
-    border: 2px solid var(--blue);
+  color: var(--green);
+  border: 2px solid var(--blue);
 }
 
 .btn-border-green {
-    padding: 10px 30px;
-    color: var(--blue);
-    border: 2px solid var(--green);
+  padding: 10px 30px;
+  color: var(--blue);
+  border: 2px solid var(--green);
 }
 
 .btn-border-blue:hover,
 .btn-border-green:hover {
-    background-color: var(--smoky);
+  background-color: var(--smoky);
 }
 
 .programs-education-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: var(--smoky);
-    padding: 100px 0px 100px 0px;
-    gap: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--smoky);
+  padding: 100px 0px 100px 0px;
+  gap: 70px;
 }
 
 .programs-education-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .programs-education-title p {
-    font-family: var(--font-sans);
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--blue);
-    text-align: center;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--blue);
+  text-align: center;
 }
 
 .programs {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 150px;
 }
 
 .program-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 }
 
 .list-programs {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 14px;
-    color: var(--green);
-    font-family: var(--font-sans);
-    font-size: 14px;
-    font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 14px;
+  color: var(--green);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .list-programs a:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .advantages {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 170px;
-    width: 100%;
-    height: 797px;
-    background-image: url('/images/преимущества.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 170px;
+  width: 100%;
+  height: 797px;
+  background-image: url("/images/преимущества.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .advantages-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .advantages-list,
 .advantages-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .advantages-list {
-    gap: 215px;
+  gap: 215px;
 }
 
 .advantages-item {
-    flex-direction: column;
-    gap: 16px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .advantages-item p {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--green);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--green);
 }
 
 .documents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--smoky);
-    padding: 100px 0px 90px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--smoky);
+  padding: 100px 0px 90px 0px;
 }
 
 .documents-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 52px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 52px;
 }
 
 .documents-slider {
-    display: flex;
-    align-items: center;
-    gap: 125px;
+  display: flex;
+  align-items: center;
+  gap: 125px;
 }
 
 .documents-slide {
-    display: none;
+  display: none;
 }
 
 .documents-slide img {
-    width: 630px;
-    height: 432px;
+  width: 630px;
+  height: 432px;
 }
 
 .slide-active {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-btn,
+.prev-btn {
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 1024px) {
+  .main-content,
+  .g-list {
     align-items: center;
+    text-align: center;
+  }
+
+  .programs-education-container {
+    padding: 80px 0;
+    gap: 50px;
+  }
+
+  .programs-education-title p {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .programs {
+    flex-direction: column;
+    gap: 80px;
+    padding: 0 20px;
+  }
+
+  .advantages {
+    height: auto;
+    padding: 80px 0;
+    gap: 100px;
+  }
+
+  .advantages-list {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .documents {
+    padding: 80px 0 70px 0;
+  }
+
+  .documents-title {
+    padding-bottom: 40px;
+    margin: auto;
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .documents-title hr {
+    width: 100% !important;
+  }
+
+  .documents-slider {
+    flex-direction: row;
+    gap: 20px;
+    padding: 0 20px;
     justify-content: center;
+  }
+
+  .documents-slide img {
+    width: 450px;
+    height: auto;
+  }
+
+  .next-btn,
+  .prev-btn {
+    width: 40px;
+    height: 40px;
+  }
 }
 
-.next-btn, .prev-btn {
-    width: 50px;
-    height: 50px;
+@media (max-width: 768px) {
+  .main-container {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .main-content {
+    gap: 30px;
+    text-align: center;
+  }
+
+  .main-title {
+    gap: 10px;
+  }
+
+  .main-description {
+    font-size: 16px;
+  }
+
+  .g-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .g {
+    gap: 10px;
+    align-items: center;
+  }
+
+  .main-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .programs-education-container {
+    padding: 60px 0;
+    gap: 40px;
+  }
+
+  .programs-education-title {
+    margin: auto;
+  }
+
+  .programs-education-title p {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .programs {
+    flex-direction: column;
+    gap: 60px;
+    padding: 0 20px;
+  }
+
+  .list-programs {
+    align-items: center;
+    text-align: center;
+  }
+
+  .advantages {
+    height: auto;
+    padding: 60px 0;
+    gap: 80px;
+  }
+
+  .advantages-title {
+    margin: auto;
+    max-width: 90%;
+  }
+
+  .advantages-list {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .documents {
+    padding: 60px 0;
+  }
+
+  .documents-title {
+    padding-bottom: 40px;
+    margin: auto;
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .documents-title hr {
+    width: 90% !important;
+  }
+
+  .documents-slider {
+    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .documents-slide img {
+    width: 280px;
+    height: auto;
+  }
+
+  .next-btn,
+  .prev-btn {
+    width: 30px;
+    height: 30px;
+  }
 }
 
-@media (max-width: 1400px) {
-    .header_right_content {
-        gap: 40px;
-    }
-    .header_menu {
-        gap: 30px;
-    }
+@media (max-width: 480px) {
+  .main-description {
+    font-size: 14px;
+  }
+
+  .g {
+    font-size: 12px;
+  }
+
+  .g img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .btn-border-blue,
+  .btn-border-green {
+    font-size: 11px;
+    padding: 8px 15px;
+  }
+
+  .list-programs {
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .programs-education-title p {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .advantages-item p {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .documents-title {
+    padding-bottom: 40px;
+    margin: auto;
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .documents-title hr {
+    width: 90% !important;
+  }
 }

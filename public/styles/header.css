@@ -1,37 +1,97 @@
-header, .header_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+header,
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header_container {
-    padding: 4px 0px;
+  padding: 4px 0px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 13px;
-    color: var(--blue);
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--blue);
+  gap: 15px;
 }
 
 .header_menu {
-    display: flex;
-    font-family: var(--font-serif);
-    font-weight: 500;
-    color: var(--green);
-    gap: 45px;
+  display: flex;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--green);
+  gap: 45px;
 }
 
 .header_menu a:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .header_right_content {
-    display: flex;
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+
+/* Медиазапрос для разрешения до 1400px (старые изменения) */
+@media (max-width: 1400px) {
+  .header_right_content {
+    gap: 40px;
+  }
+  .header_menu {
+    gap: 30px;
+  }
+}
+
+/* НОВЫЙ медиазапрос для разрешения до 1240px */
+@media (max-width: 1240px) {
+  .header_container {
+    flex-direction: column; /* Элементы хедера в колонку */
     align-items: center;
-    gap: 90px;
+    padding: 10px 0;
+  }
+
+  .header_right_content {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+    flex-direction: column;
+  }
+
+  .header_menu {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 15px;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 11px;
+  }
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
+  .header_right_content {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 10px;
+    gap: 5px;
+  }
+  .logo img {
+    width: 25px;
+    height: 25px;
+  }
 }

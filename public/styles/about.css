@@ -1,0 +1,51 @@
+.main-title {
+  margin: 100px 0px;
+}
+
+.main-info {
+  margin-top: 100px;
+}
+
+.main-title h2 {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-item {
+  font-family: var(--font-sans);
+  color: var(--blue);
+  font-size: 24px;
+}
+
+.about-span {
+  font-weight: 700;
+}
+
+.about-item p {
+  color: var(--blue);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    text-align: center;
+    max-width: 90% !important;
+  }
+
+  .main-title {
+    margin: 40px 40px;
+  }
+
+  .main-info {
+    margin-top: 50px;
+  }
+
+  .about-item {
+    font-size: 12px;
+  }
+}
